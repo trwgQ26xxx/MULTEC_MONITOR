@@ -1,2 +1,3 @@
-/PCB/GERBERS/
+/PCB/GERBERS*
+/PCB/*cache
 /PCB/*backups/
