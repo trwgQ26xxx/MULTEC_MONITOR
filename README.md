@@ -2,6 +2,8 @@
 
 Materials related to FSO 1.6L MPI Delphi/Multec ECU.
 
+![MONITOR_RUNNING](MONITOR_RUNNING.jpg)
+
 ![MULTEC_DIAG](MULTEC_DIAG.jpg)
 
 # Disclaimer
@@ -26,6 +28,6 @@ This work is licensed under a
 # Directories organization
 
 - **software** - PC software, written in C.
-- **PCB** - PCB project, prepared in KiCad version 8.0.1.
+- **PCB** - PCB project, prepared in KiCad version 8.0.7.
 
 
