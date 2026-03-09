@@ -1,10 +1,17 @@
 # MULTEC MONITOR
 
-Materials related to FSO 1.6L MPI Delphi/Multec ECU.
+Materials related to FSO Polonez ("Ponton") ECUs, primarily the 1.6L MPI Delphi/Multec ECU.
 
-![MONITOR_RUNNING](MONITOR_RUNNING.jpg)
+This repository contains:
+- A design for an alternative diagnostic cable for the Multec Monitor software.
+- A COM port tester program for MS-DOS.
+- An Arduino-based emulator for the Multec ECU signal.
+- A COM port latency checker for Linux PCs.
+- A fix for the Polonez Bosch MA1.7 ECU that enables it to be diagnosed using VCDS.
 
-![MULTEC_DIAG](MULTEC_DIAG.jpg)
+![MONITOR_RUNNING](PHOTOS/MONITOR_RUNNING.jpg)
+
+![MULTEC_DIAG](PHOTOS/MULTEC_DIAG.jpg)
 
 # Disclaimer
 
@@ -27,7 +34,26 @@ This work is licensed under a
 
 # Directories organization
 
-- **software** - PC software, written in C.
-- **PCB** - PCB project, prepared in KiCad version 8.0.7.
+- **software** - PC and Arduino software written in C.
+- **PCB** - The diagnostic cable PCB design, created in KiCad.
+- **BOSCH_ECU** - A Python-based fix for the Polonez Bosch MA1.7 ECU that enables diagnostics using VCDS.
 
+# Developer cable
 
+Compared to the simple resistor-based version, this cable has the following advantages:
+
+- The use of an optocoupler allows diagnostics to be performed on most Polonez ("Ponton") vehicles where the Check Engine (CEL) indicator has been removed. The ECU’s 160-baud signal output is an open-collector (OC) type, so without proper biasing the signal disappears together with the bulb.
+
+- The MAX232 IC ensures correct RS-232 voltage levels at the computer connector, regardless of whether the PC provides a sufficiently low voltage on the RTS pin, and regardless of the condition of the vehicle battery.
+
+**PIN** | **SIGNAL** | **WIRE COLOR**
+:---: | :---: | :---:
+1 | VCC | Red
+2 | CTS | White
+3 | #CTS | Yellow
+4 | TX-RX | Green
+5 | GND | Brown
+
+![DEV_UNIT_TOP](PHOTOS/DEV_UNIT_TOP.jpg)
+
+![DEV_UNIT_BOTTOM](PHOTOS/DEV_UNIT_BOTTOM.jpg)
