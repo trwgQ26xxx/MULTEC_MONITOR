@@ -62,11 +62,11 @@ for start, end in ff_blocks:
 	print(f"Block from 0x{start:0>4X} to 0x{end:0>4X} (length {current_block_length} bytes)")
 
 print("---------------------------------")
-print(f"Total number of 0xFF bytes in {input_filename} is {ff_count} bytes")
-print(f"Total length of all 0xFF blocks is {total_length} bytes")
-print(f"Difference is {(ff_count - total_length)} bytes")
+print(f"Total number of 0xFF bytes in {input_filename} is {ff_count} bytes.")
+print(f"Total length of all 0xFF blocks is {total_length} bytes.")
+print(f"Difference is {(ff_count - total_length)} bytes.")
 
-print(f"ROM usage is approximately {((total_length / EXPECTED_FILE_SIZE) * 100):.2f}%")
+print(f"ROM usage is approximately {(((EXPECTED_FILE_SIZE - total_length) / EXPECTED_FILE_SIZE) * 100):.0f}%.")
 
 print("Done.")
 
