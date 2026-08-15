@@ -9,6 +9,8 @@ This repository contains:
 - A COM port latency checker for Linux PCs.
 - A fix for the Polonez Bosch MA1.7 ECU that enables it to be diagnosed using VCDS.
 
+Contact : trwgQ {leechers not welcome} 26 {remove spaces} xxx {remove spaces} {at} proton {dot} me
+
 ![MONITOR_RUNNING](PHOTOS/MONITOR_RUNNING.jpg)
 
 ![MULTEC_DIAG](PHOTOS/MULTEC_DIAG.jpg)
@@ -57,3 +59,11 @@ Compared to the simple resistor-based version, this cable has the following adva
 ![DEV_UNIT_TOP](PHOTOS/DEV_UNIT_TOP.jpg)
 
 ![DEV_UNIT_BOTTOM](PHOTOS/DEV_UNIT_BOTTOM.jpg)
+
+# Using Polonez 0 261 204 242 Bosch ECU fix
+
+Reading the 87C510 should be relatively straightforward with an 87C510 adapter and reader, such as the one from the [FLT module reader](https://github.com/trwgQ26xxx/FLT_module_reader).
+
+Burning a new 87C510, however, could be tricky in this day and age, since suitable programmers and blank chips are becoming increasingly difficult to source. I would recommend using a modern flash chip with an adapter, such as [87C510 to 27C512](https://github.com/y23tanaka/87c510to27C512).
+
+This approach should make the process much more practical: read the original ECU ROM, make the required changes to the image, and then program the modified firmware onto a readily available modern flash chip. It also allows you to keep the original 87C510, along with an untouched dump of its contents, as a backup.
